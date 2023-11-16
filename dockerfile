@@ -10,6 +10,8 @@ RUN pip install pyyaml
 # Copy the Python script and YAML file into the container
 COPY main.py .
 COPY quotes.yaml .
+COPY quotes.html .
+COPY style.css .
 
 # Expose the port the app runs on
 EXPOSE 8080
