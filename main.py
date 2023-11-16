@@ -29,6 +29,9 @@ class QuoteHandler(http.server.SimpleHTTPRequestHandler):
             return html_template.replace('{quote}', random_quote)
 
     def do_GET(self):
+        if self.path != '/style.css':
+            self.path = '/quotes.html'
+            
         self.send_response(200)
         self.send_header('Content-type', self.guess_type(self.path))
         self.end_headers()
